@@ -35,7 +35,9 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
 
-  config.assets.cache_store = :mem_cache_store
+  config.assets.configure do |env|
+    env.cache = ActiveSupport::Cache::MemCacheStore.new
+  end
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
