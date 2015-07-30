@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/recursecenter/sprockets.git
-  revision: 7d72b2f6ecc22c7454abdbe0c0fd91248761f413
+  revision: ed123a7cdbbd3de0e72d4eb7aa8085af95e52a16
   branch: wtf-is-going-on
   specs:
     sprockets (3.2.0)
