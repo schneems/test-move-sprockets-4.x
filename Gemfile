@@ -15,7 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'sprockets', github: 'recursecenter/sprockets', branch: 'wtf-is-going-on'
+gem 'pry'
+gem 'sprockets', github: 'recursecenter/sprockets', branch: 'wtf-is-going-on' # path: "~/dev/sprockets"
 gem 'stackprof'
 gem 'memcachier'
 gem 'dalli'
