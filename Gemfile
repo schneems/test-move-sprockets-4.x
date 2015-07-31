@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'pry'
-gem 'sprockets', github: 'recursecenter/sprockets', branch: 'wtf-is-going-on' # path: "~/dev/sprockets"
+gem 'sprockets'
 gem 'stackprof'
 gem 'memcachier'
 gem 'dalli'
