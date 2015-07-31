@@ -12,15 +12,15 @@ included for demonstration purposes.
 ## Reproducing
 
 ```sh
-~/test-3.2 $ RAILS_ENV=production bin/rake assets:precompile
+~/test-3.2 $ time RAILS_ENV=production bin/rake assets:precompile
 # Observe long compile time
 
-~/test-3.2 $ RAILS_ENV=production bin/rake assets:precompile
+~/test-3.2 $ time RAILS_ENV=production bin/rake assets:precompile
 # Observe short compile time due to cache present in tmp/cache
 
 ~/test-3.2 $ cd .. && mv test-3.2 no-cache && cd no-cache
 
-~/no-cache $ RAILS_ENV=production bin/rake assets:precompile
+~/no-cache $ time RAILS_ENV=production bin/rake assets:precompile
 # Observe long compile time, even though tmp/cache is in place
 # and no assets have changed
 ```
