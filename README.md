@@ -1,4 +1,19 @@
-# Sprockets 3.2 caching
+# Sprockets test-move-4.x caching
+
+> Warning: I can't get sprockets 4.x to work
+
+```
+$ ls public/assets
+ls: public/assets: No such file or directory
+$ RAILS_ENV=production bin/rake assets:precompile
+$ ls -f public/assets
+.               .sprockets-manifest-086efa7aa260714a7d0c3db1ac42e84a.json
+# No actual assets generated
+```
+
+Why? No clue, someone with more sprockets 4 experience want to take a stab?
+
+## Issue I want to test for
 
 Newer versions of sprockets cache assets based on an asset's
 fullpath. In an environment like Heroku, this means that _no caching_
@@ -12,13 +27,13 @@ included for demonstration purposes.
 ## Reproducing
 
 ```sh
-~/test-3.2 $ time RAILS_ENV=production bin/rake assets:precompile
+~/test-move-4.x $ time RAILS_ENV=production bin/rake assets:precompile
 # Observe long compile time
 
-~/test-3.2 $ time RAILS_ENV=production bin/rake assets:precompile
+~/test-move-4.x $ time RAILS_ENV=production bin/rake assets:precompile
 # Observe short compile time due to cache present in tmp/cache
 
-~/test-3.2 $ cd .. && mv test-3.2 no-cache && cd no-cache
+~/test-move-4.x $ cd .. && mv test-move-4.x no-cache && cd no-cache
 
 ~/no-cache $ time RAILS_ENV=production bin/rake assets:precompile
 # Observe long compile time, even though tmp/cache is in place
